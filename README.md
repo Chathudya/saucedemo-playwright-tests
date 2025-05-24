@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🧪 SauceDemo E2E Automation Project
 
 This repository contains an end-to-end test automation framework built for testing the [SauceDemo](https://www.saucedemo.com) web application. The framework is designed using modern tooling, scalable architecture (POM), and enhanced with AI tools for speed and precision.
@@ -96,3 +97,6 @@ saucedemo_tests/
 **Author**: Chathudya Jayawardana  
 **Role**: QA Engineer 
 **Connect**: [LinkedIn](#) | [Email](#)  
+=======
+# saucedemo-playwright-tests
+>>>>>>> b4e20bebaaeecb200c1731c6f1a2d2b5c40650ef
