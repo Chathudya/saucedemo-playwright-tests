@@ -1,102 +1,89 @@
-<<<<<<< HEAD
-# 🧪 SauceDemo E2E Automation Project
+# 🧪 saucedemo-playwright-tests
 
-This repository contains an end-to-end test automation framework built for testing the [SauceDemo](https://www.saucedemo.com) web application. The framework is designed using modern tooling, scalable architecture (POM), and enhanced with AI tools for speed and precision.
-
----
-
-## 🚀 Tools & Tech Stack
-
-| Category       | Tool/Library            |
-|----------------|-------------------------|
-| Language       | JavaScript (ES6)        |
-| Framework      | [Playwright](https://playwright.dev/) |
-| Assertion      | Playwright Test         |
-| Architecture   | Page Object Model (POM) |
-| CI/CD          | GitHub Actions          |
-| Reporting      | HTML (Playwright Reporter) |
-| AI Assistance  | ChatGPT (OpenAI GPT-4)  |
+Automated UI testing framework for [SauceDemo](https://www.saucedemo.com) built using **Playwright** with the **Page Object Model (POM)** structure. Covers login, product interactions, cart, checkout, and form validation — including a stress test simulation.
 
 ---
 
-## 🧠 Test Strategy & Assumptions
+## 📁 Project Structure
 
-### ✅ Coverage Areas
-- Login Page (positive & negative flows)
-- Product Listing & Product Detail Pages
-- Add to Cart & Cart Summary
-- Checkout (continue, cancel, complete)
-- Form Validation & Error Handling
-
-### 🧱 Test Design Principles
-- Each page uses its own **Page Object** for modularity and reusability
-- Locators are stored separately for easy maintenance
-- Tags like `@sanity`, `@regression`, `@negative`, and `@validation` enable suite-based execution via `--grep`
-
-### 🧪 Execution Modes
-- Run full suite: `npx playwright test`
-- Run by tag: `npx playwright test --grep "@sanity"`
-- Run specific file: `npx playwright test tests/login.test.js`
-- Run in UI mode: `npx playwright test --ui`
-
----
-
-## 🤖 AI Tools Leveraged
-
-| Area | How AI Was Used |
-|------|------------------|
-| Test Case Design | Generated and refined test scenarios for real-world relevance |
-| Automation Coding | Rapid generation of POM classes, locators, and test logic |
-| Optimization | Refactored test structure for scalability and readability |
-| CI Integration | Helped create GitHub Actions YAML and reporting setup |
-
-AI (ChatGPT-4) served as a **pair programmer + QA strategist**, speeding up delivery and reducing redundant work.
+```
+saucedemo-playwright-tests/
+├── tests/                  # Test specs
+│   ├── login.test.js
+│   ├── product.test.js
+│   ├── cart.test.js
+│   ├── checkout.test.js
+│   ├── formValidation.test.js
+│   └── uiStress.test.js
+├── pages/                  # Page Object files
+│   ├── LoginPage.js
+│   ├── ProductPage.js
+│   ├── CartPage.js
+│   ├── CheckoutPage.js
+│   └── locators/           # Element locators
+├── utils/                  # Utility functions
+│   ├── loginHelper.js
+│   ├── checkoutHelper.js
+│   ├── screenshotHelper.js
+│   └── csvReader.js
+├── playwright.config.js    # Playwright configuration
+├── README.md               # You're here
+└── package.json
+```
 
 ---
 
-## 📦 CI/CD Setup
+## ✅ Test Coverage
 
-GitHub Actions automatically runs:
-- On every `push` or `pull_request` to `main`
-- Generates and uploads a test report artifact
-
-See `.github/workflows/playwright.yml` for config.
+| Feature           | Test File               | Status |
+|------------------|-------------------------|--------|
+| Login (positive/negative) | `login.test.js`           | ✅     |
+| Product Listing / Add to Cart | `product.test.js`, `cart.test.js` | ✅     |
+| Checkout Workflow | `checkout.test.js`     | ✅     |
+| Form Validation   | `formValidation.test.js`| ✅     |
+| UI Stress Simulation | `uiStress.test.js`   | ✅     |
 
 ---
 
-## 🧭 Directory Structure
-saucedemo_tests/
-├── pages/ # Page Objects & Locators
-│ ├── LoginPage.js
-│ ├── CartPage.js
-│ ├── ProductPage.js
-│ └── CheckoutPage.js
-├── tests/ # All test scenarios grouped
-│ ├── login.test.js
-│ ├── product.test.js
-│ ├── cart.test.js
-│ ├── checkout.test.js
-│ └── formValidation.test.js
-├── playwright.config.js
-└── .github/workflows/ # GitHub Actions CI config
+## 🚀 Getting Started
+
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Run tests
+
+```bash
+npx playwright test
+```
+
+### 3. View test report
+
+```bash
+npx playwright show-report
+```
+
+---
+
+## 🧪 Stress Testing
+
+The `uiStress.test.js` simulates repeated login + browsing scenarios to observe UI responsiveness under load.
+
+You can increase the loop count or run it headless for performance benchmarks.
 
 
 ---
 
-## 📋 Future Enhancements
+## 🧠 Author
 
-- Add environment config and test data abstraction
-- Implement visual regression testing
-- Parallel test execution with CI matrix
-- Integrate with Allure or TestRail
+**Chathudya Jayawardana**  
+💼 QA Engineer  
+📍 Sri Lanka
 
 ---
 
-## 📧 Contact
+## 📜 License
 
-**Author**: Chathudya Jayawardana  
-**Role**: QA Engineer 
-**Connect**: [LinkedIn](#) | [Email](#)  
-=======
-# saucedemo-playwright-tests
->>>>>>> b4e20bebaaeecb200c1731c6f1a2d2b5c40650ef
+This project is open-source
