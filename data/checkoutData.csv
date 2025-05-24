@@ -1,0 +1,5 @@
+firstName,lastName,postalCode,shouldPass
+John,Doe,12345,true
+Jane,Smith,,false
+,,54321,false
+Chris,Brown,00000,true
