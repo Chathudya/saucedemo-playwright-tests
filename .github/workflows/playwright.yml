@@ -1,41 +1,35 @@
 name: Playwright Tests
-
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
 permissions:
   contents: read  # required for actions/checkout
   actions: read   # ensures actions from marketplace can be used
   id-token: write # required if you plan to use GitHub OIDC for authentication
-
 jobs:
   test:
     name: Run Playwright Tests
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-
+        uses: actions/checkout@v4
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-
+          cache: 'npm'
       - name: Install dependencies
         run: |
           npm ci
           npx playwright install --with-deps
-
       - name: Run all tests
         run: npx playwright test
-
       - name: Upload Playwright report
         if: always()
-        uses: actions/upload-artifact@v3.1.3
+        uses: actions/upload-artifact@v4
         with:
           name: playwright-report
           path: playwright-report/
+          retention-days: 30
