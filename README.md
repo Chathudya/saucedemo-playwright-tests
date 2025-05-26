@@ -73,6 +73,9 @@ The `uiStress.test.js` simulates repeated login + browsing scenarios to observe 
 
 You can increase the loop count or run it headless for performance benchmarks.
 
+## 🔗 Bug Report:
+
+https://docs.google.com/document/d/1zPaBQL7QHXVjOiEoEBm4dh7Stk5AncGHuwxg0u5Hhqc/edit?usp=sharing  
 
 ---
 
